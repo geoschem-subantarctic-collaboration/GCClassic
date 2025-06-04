@@ -74,4 +74,8 @@ print_item_highlight LUO_WETDEP $(scrape_cache LUO_WETDEP)
 print_item_highlight FASTJX $(scrape_cache FASTJX)
 echo ""
 
+echo "## Perturbation experiment"
+print_item_highlight PERTURB $(scrape_cache PERTURB)
+echo ""
+
 # grep --color "GEOSChem_Fortran_FLAGS_[A-Z_]*${COMPILER_ID}" $CACHEFILE

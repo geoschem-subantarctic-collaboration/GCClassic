@@ -275,5 +275,18 @@ function(configureGCClassic)
     endmacro()
     get_git_commit_date(COMMIT_DATE)
     set(GIT_COMMIT_DATE ${COMMIT_DATE} CACHE STRING "Date of last Git commit")
+
+    #-------------------------------------------------------------------------
+    # Make PERTURB an option. This sets a preprocesser variable for perturbation
+    # experiments.
+    #-------------------------------------------------------------------------
+    set(PERTURB "NONE" CACHE STRING "Name of the perturbation experiment to run")
+    gc_pretty_print(VARIABLE PERTURB OPTIONS "NONE" "SSA_LOSSRATE_CONSTANT" "SSA_LOSSRATE_ZERO")
+
+    set(PERTURB ${PERTURB} PARENT_SCOPE)
+
+    # create a preprocessor variable like PERTURB_NONE, PERTURB_SSA_LOSSRATE_CONSTANT, etc...
+    set(PERTURB_DEFN "PERTURB_${PERTURB}")
+    add_compile_definitions(${PERTURB_DEFN})
     
 endfunction()
