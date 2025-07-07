@@ -281,7 +281,7 @@ function(configureGCClassic)
     # experiments.
     #-------------------------------------------------------------------------
     set(PERTURB "NONE" CACHE STRING "Name of the perturbation experiment to run")
-    gc_pretty_print(VARIABLE PERTURB OPTIONS "NONE" "SSA_LOSSRATE_CONSTANT" "SSA_LOSSRATE_ZERO")
+    gc_pretty_print(VARIABLE PERTURB OPTIONS "NONE" "SSA_LOSSRATE_CONSTANT" "SSA_LOSSRATE_ZERO" "MORE_WIND" "LESS_WIND" "MORE_OCEAN_MERCURY" "LESS_OCEAN_MERCURY")
 
     set(PERTURB ${PERTURB} PARENT_SCOPE)
 
